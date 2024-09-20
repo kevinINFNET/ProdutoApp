@@ -1,0 +1,31 @@
+﻿@page
+@model ProdutoApp.Pages.Produtos.IndexModel
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+<h2>Lista de Produtos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model.Produtos)
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Preco</td>
+                <td>
+                    <a asp-page="/Produtos/Edit" asp-route-id="@produto.Id">Editar</a> |
+                    <a asp-page="/Produtos/Delete" asp-route-id="@produto.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="/Produtos/Create" class="btn btn-primary">Adicionar Produto</a>

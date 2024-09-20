@@ -1,0 +1,14 @@
+﻿@page
+@model ProdutoApp.Pages.Produtos.DeleteModel
+@{
+    ViewData["Title"] = "Excluir Produto";
+}
+
+<h2>Excluir Produto</h2>
+
+<h3>Você tem certeza que deseja excluir o produto @Model.Produto.Nome?</h3>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-page="/Produtos/Index" class="btn btn-secondary">Cancelar</a>
+</form>
